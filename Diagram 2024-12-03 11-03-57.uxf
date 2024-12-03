@@ -1,0 +1,67 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>area</help_text><element><id>UMLClass</id><coordinates><x>510</x><y>0</y><w>260</w><h>150</h></coordinates><panel_attributes>AreaProtegida
+--
+- nombre: String
+- superficie: double
+- fechaDeEstablecimiento: LocalDate
+--
++ AreaProtegida(String, double, LocalDate)
++ getNombre(): String
++ getSuperficie(): double
++ getFechaEstablecimiento(): LocalDate
++ toString(): String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1070</x><y>270</y><w>350</w><h>100</h></coordinates><panel_attributes>ReservaNatural
+--
+- nivelProteccion: NivelProteccion
+--
++ ReservaNatural(String, double, LocalDate, NivelProteccion)
++ getNivelDeProteccion(): NivelProteccion
++ toString(): String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>280</y><w>460</w><h>90</h></coordinates><panel_attributes>ParqueNacional
+--
+- actividadesTuristicas: Set&lt;ActividadTuristica&gt;
+--
++ ParqueNacional(String, double, LocalDate, actividades: Set&lt;ActividadTuristica&gt;)
++ getActividadesTuristicas(): Set&lt;ActividadTuristica&gt;
++ toString(): String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>600</x><y>270</y><w>450</w><h>100</h></coordinates><panel_attributes>SantuarioVidaSilvestre
+--
+- especiesProtegidas: List&lt;Especie&gt;
+--
++ SantuarioDeVidaSilvestre(String, double, LocalDate, especies: List&lt;Especie&gt;)
++ getEspeciesProtegidas(): List&lt;Especie&gt;
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>140</x><y>150</y><w>210</w><h>90</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+ActividadTuristica 
+--
++ CAMPING
++ SENDERISMO
++ SAFARI
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1040</x><y>80</y><w>210</w><h>100</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+NivelProteccion
+--
++ BAJO
++ MEDIO
++ ALTO</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>720</x><y>440</y><w>210</w><h>100</h></coordinates><panel_attributes>Especie
+--
+- NombreCientifico: String
+- NombreComun: String
+--
++ Especie
++ toString ():</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>410</x><y>500</y><w>210</w><h>60</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+ActividadTuristicaRealizable
+--
++ realizarActividad(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>0</y><w>450</w><h>120</h></coordinates><panel_attributes>GestionAreas
+--
+- areas: - areas: List&lt;AreaProtegida&gt;
+--
++ GestionAreas()
++ agregarArea(area: AreaProtegida): void
++ mostrarAreas(): void
++ realizarActividad(ParqueNacional, ActividadTuristica): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>550</y><w>210</w><h>90</h></coordinates><panel_attributes>AreaRepetidaException
+--
+- mensaje: String
+--
++ AreaRepetidaException (String)
++ getMensaje(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>50</x><y>120</y><w>30</w><h>440</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;420;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>30</y><w>70</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+areas</panel_attributes><additional_attributes>50;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>150</y><w>170</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>150;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>150</y><w>80</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;110</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>150</y><w>330</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;310;110</additional_attributes></element><element><id>Relation</id><coordinates><x>220</x><y>230</y><w>80</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
+m1= Actividad</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>1150</x><y>190</y><w>90</w><h>90</h></coordinates><panel_attributes>Proteccion</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>370</y><w>90</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>70;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>370</y><w>180</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;130;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1150</x><y>180</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>860</x><y>370</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element></diagram>
